@@ -54,7 +54,9 @@ namespace DependencyInjection.Console
 
         private static IPatternWriter GetPatternWriter(bool useColors)
         {
-            ICharacterWriter characterWriter = new AsciiWriter();
+            var textWriter = System.Console.Out;
+            ICharacterWriter characterWriter = new AsciiWriter(textWriter);
+
             if (useColors)
             {
                 characterWriter = new ColorWriter(characterWriter);
