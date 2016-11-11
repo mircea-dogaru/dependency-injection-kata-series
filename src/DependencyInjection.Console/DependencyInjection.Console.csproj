@@ -50,6 +50,9 @@
     <Compile Include="CharacterWriters\AsciiWriter.cs" />
     <Compile Include="CharacterWriters\ColorWriter.cs" />
     <Compile Include="CharacterWriters\ICharacterWriter.cs" />
+    <Compile Include="IPatternApp.cs" />
+    <Compile Include="IPatternGenerator.cs" />
+    <Compile Include="IPatternWriter.cs" />
     <Compile Include="SquarePainters\WhiteSquarePainter.cs" />
     <Compile Include="SquarePainters\CircleSquarePainter.cs" />
     <Compile Include="SquarePainters\ISquarePainter.cs" />

@@ -3,14 +3,13 @@ using DependencyInjection.Console.Entities;
 
 namespace DependencyInjection.Console
 {
-    internal class PatternWriter
+    internal class PatternWriter : IPatternWriter
     {
         private readonly ICharacterWriter _characterWriter;
 
-        public PatternWriter(bool useColours)
+        public PatternWriter(ICharacterWriter characterWriter)
         {
-            var writer = new AsciiWriter();
-            _characterWriter = useColours ? (ICharacterWriter) new ColorWriter(writer) : writer;
+            _characterWriter = characterWriter;
         }
 
         public void Write(Pattern pattern)

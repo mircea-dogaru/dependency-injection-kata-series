@@ -1,14 +1,14 @@
 ﻿namespace DependencyInjection.Console
 {
-    internal class PatternApp
+    internal class PatternApp : IPatternApp
     {
-        private readonly PatternWriter _patternWriter;
-        private readonly PatternGenerator _patternGenerator;
+        private readonly IPatternWriter _patternWriter;
+        private readonly IPatternGenerator _patternGenerator;
 
-        public PatternApp(bool useColours)
+        public PatternApp(IPatternWriter patternWriter, IPatternGenerator patternGenerator)
         {
-            _patternWriter = new PatternWriter(useColours);
-            _patternGenerator = new PatternGenerator();
+            _patternWriter = patternWriter;
+            _patternGenerator = patternGenerator;
         }
 
         public void Run(int width, int height)
